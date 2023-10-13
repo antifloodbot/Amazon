@@ -5,7 +5,7 @@
     <test name="positive">
         <classes>
             <class name="testSuits.SuccessLogin"/>
-            <class name="testSuits.Positive2"/>
+            <class name="testSuits.SuccessLogout"/>
         </classes>
     </test>
 

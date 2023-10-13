@@ -14,6 +14,7 @@ public class SuccessLogin extends InitialDriver {
                 .clickContinueButton()
                 .clickSignInButton()
                 .saveGreetingText();
+
         Assert.assertEquals(actualGreetingText, "Hello, Kosta");
     }
 }
