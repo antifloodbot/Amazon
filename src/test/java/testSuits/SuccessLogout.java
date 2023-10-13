@@ -18,4 +18,3 @@ public class SuccessLogout extends InitialDriver {
         Assert.assertEquals(actualLoggedOutText, "Sign in");
     }
 }
-
