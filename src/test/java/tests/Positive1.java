@@ -9,6 +9,6 @@ public class Positive1 extends InitialDriver {
 
     @Test
     public void successLogin() throws InterruptedException {
-        sleep(5000);
+        sleep(3000);
     }
 }
