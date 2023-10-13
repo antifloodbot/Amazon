@@ -4,15 +4,15 @@
 
     <test name="positive">
         <classes>
-            <class name="tests.Positive1"/>
-            <class name="tests.Positive2"/>
+            <class name="testSuits.SuccessLogin"/>
+            <class name="testSuits.Positive2"/>
         </classes>
     </test>
 
     <test name="negative">
         <classes>
-            <class name="tests.Negative1"/>
-            <class name="tests.Negative2"/>
+            <class name="testSuits.Negative1"/>
+            <class name="testSuits.Negative2"/>
         </classes>
     </test>
 

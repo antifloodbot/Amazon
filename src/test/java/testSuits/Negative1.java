@@ -1,4 +1,4 @@
-package tests;
+package testSuits;
 
 public class Negative1 {
 }
