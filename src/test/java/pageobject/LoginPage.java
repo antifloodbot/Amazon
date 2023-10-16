@@ -7,7 +7,6 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class LoginPage {
-
     private String VALID_USER = "kostia.talamaniuk@ukr.net";
     private String INVALID_USER = "kostia.talamaniuk@ukr.nett";
 
