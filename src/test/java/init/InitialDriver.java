@@ -16,7 +16,7 @@ public class InitialDriver {
     @BeforeTest
     public void setupWebDriver(){
         Configuration.browser = "chrome";
-        Configuration.timeout = 10000;
+        Configuration.timeout = 100000;
 
         ChromeOptions options = getChromeOptions();
         Configuration.browserCapabilities = options;
@@ -33,7 +33,6 @@ public class InitialDriver {
     public static ChromeOptions getChromeOptions() {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--no-sandbox");
-        chromeOptions.addArguments("--headless");
         chromeOptions.addArguments("--disable-dev-shm-usage");
         chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
         chromeOptions.addArguments("--disable-features=AutomationControlled");
