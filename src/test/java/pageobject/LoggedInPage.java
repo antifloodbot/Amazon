@@ -2,6 +2,7 @@ package pageobject;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.interactions.Actions;
 
 import static com.codeborne.selenide.Selenide.$x;
@@ -12,10 +13,12 @@ public class LoggedInPage {
     SelenideElement accountArea = $x("//span[@class='nav-line-2 ']");
     SelenideElement logOutButton = $x("//span[normalize-space()='Sign Out']");
 
+    @Step("Save greeting text after log in")
     public String saveGreetingText() {
         return greetingText.getText();
     }
 
+    @Step("Clicking on logout button on the Main Page")
     public LoggedOutPage clickLogoutButton() {
         Actions actions = new Actions(Selenide.webdriver().driver().getWebDriver());
         actions.moveToElement(accountArea).perform();

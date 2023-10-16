@@ -1,6 +1,7 @@
 package pageobject;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -13,6 +14,7 @@ public class PasswordPage {
         passwordField.setValue("+z9}m:^5V^j+XFh");
     }
 
+    @Step("Clicking on continue sign in button on the Password Page")
     public LoggedInPage clickSignInButton() {
         enterPassword();
         signInButton.click();
