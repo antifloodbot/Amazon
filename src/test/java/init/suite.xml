@@ -11,8 +11,8 @@
 
     <test name="negative">
         <classes>
-            <class name="testSuits.Negative1"/>
-            <class name="testSuits.Negative2"/>
+            <class name="testSuits.InvalidUser"/>
+            <class name="testSuits.InvalidPassword"/>
         </classes>
     </test>
 
