@@ -4,6 +4,7 @@
 
     <test name="regression">
         <classes>
+            <class name="testSuits.SuccessLogin"/>
             <class name="testSuits.SuccessLoginWithLogout"/>
             <class name="testSuits.InvalidUser"/>
             <class name="testSuits.InvalidPassword"/>
