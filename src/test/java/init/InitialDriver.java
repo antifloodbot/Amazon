@@ -4,8 +4,8 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 import java.util.Random;
 
@@ -13,7 +13,7 @@ public class InitialDriver {
 
     private final String BASE_URL = "https://amazon.com";
 
-    @BeforeTest
+    @BeforeClass
     public void setupWebDriver(){
         Configuration.browser = "chrome";
         Configuration.timeout = 10000;
@@ -25,7 +25,7 @@ public class InitialDriver {
         WebDriverRunner.getWebDriver().manage().window().maximize();
     }
 
-    @AfterTest
+    @AfterClass
     public void close() {
         Selenide.closeWebDriver();
     }
@@ -34,7 +34,6 @@ public class InitialDriver {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--no-sandbox");
         chromeOptions.addArguments("--disable-dev-shm-usage");
-        chromeOptions.addArguments("--headless");
         chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
         chromeOptions.addArguments("--disable-features=AutomationControlled");
         chromeOptions.addArguments("--user-agent='" + getRandomUserAgent().userAgentName + "'");
