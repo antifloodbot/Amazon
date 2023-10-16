@@ -50,7 +50,7 @@
                     </argLine>
                     <suiteXmlFiles>
                         <suiteXmlFile>${basedir}${TEST_SUITE}.xml</suiteXmlFile>
-                        <!--<suiteXmlFile>${basedir}src/test/java/utils/suite.xml</suiteXmlFile>-->
+                        <!--<suiteXmlFile>${basedir}src/test/java/testSuits/suite.xml</suiteXmlFile>-->
                     </suiteXmlFiles>
                     <systemProperties>
                         <property>
