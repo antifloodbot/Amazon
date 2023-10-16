@@ -14,12 +14,12 @@ public class LoggedInPage {
     SelenideElement accountArea = $x("//span[@class='nav-line-2 ']");
     SelenideElement logOutButton = $x("//span[normalize-space()='Sign Out']");
 
-    @Step("Save greeting text after log in")
+    @Step("Verification that user is logged in")
     public String saveGreetingText() {
         return greetingText.shouldBe(Condition.visible).getText();
     }
 
-    @Step("Logout")
+    @Step("Verification that user is logged out")
     public LoggedOutPage clickLogoutButton() {
         Actions actions = new Actions(Selenide.webdriver().driver().getWebDriver());
         actions.moveToElement(accountArea).perform();
