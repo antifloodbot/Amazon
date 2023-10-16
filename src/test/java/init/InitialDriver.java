@@ -3,6 +3,8 @@ package init;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -17,6 +19,9 @@ public class InitialDriver {
         Configuration.browser = "chrome";
         Selenide.open(BASE_URL);
         WebDriverRunner.getWebDriver().manage().window().maximize();
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability(ChromeOptions.CAPABILITY, new ChromeOptions().addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36"));
+        Configuration.browserCapabilities = capabilities;
     }
 
     @AfterTest
