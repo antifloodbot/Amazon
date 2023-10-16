@@ -1,5 +1,6 @@
 package pageobject;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -15,14 +16,14 @@ public class LoggedInPage {
 
     @Step("Save greeting text after log in")
     public String saveGreetingText() {
-        return greetingText.getText();
+        return greetingText.shouldBe(Condition.visible).getText();
     }
 
     @Step("Logout")
     public LoggedOutPage clickLogoutButton() {
         Actions actions = new Actions(Selenide.webdriver().driver().getWebDriver());
         actions.moveToElement(accountArea).perform();
-        logOutButton.click();
+        logOutButton.shouldBe(Condition.visible).click();
         return new LoggedOutPage();
     }
 }

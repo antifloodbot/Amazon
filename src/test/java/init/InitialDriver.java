@@ -4,11 +4,10 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-import java.util.Arrays;
+import java.util.Random;
 
 public class InitialDriver {
 
@@ -17,15 +16,34 @@ public class InitialDriver {
     @BeforeTest
     public void setupWebDriver(){
         Configuration.browser = "chrome";
+        Configuration.timeout = 10000;
+
+        ChromeOptions options = getChromeOptions();
+        Configuration.browserCapabilities = options;
+
         Selenide.open(BASE_URL);
         WebDriverRunner.getWebDriver().manage().window().maximize();
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability(ChromeOptions.CAPABILITY, new ChromeOptions().addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36"));
-        Configuration.browserCapabilities = capabilities;
     }
 
     @AfterTest
     public void close() {
         Selenide.closeWebDriver();
+    }
+
+    public static ChromeOptions getChromeOptions() {
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--no-sandbox");
+        chromeOptions.addArguments("--headless");
+        chromeOptions.addArguments("--disable-dev-shm-usage");
+        chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
+        chromeOptions.addArguments("--disable-features=AutomationControlled");
+        chromeOptions.addArguments("--user-agent='" + getRandomUserAgent().userAgentName + "'");
+        chromeOptions.addArguments("--ignore-certificate-errors");
+        return chromeOptions;
+    }
+    public static UserAgentEnum getRandomUserAgent() {
+        UserAgentEnum[] agents = UserAgentEnum.values();
+        int randomIndex = new Random().nextInt(agents.length);
+        return agents[randomIndex];
     }
 }

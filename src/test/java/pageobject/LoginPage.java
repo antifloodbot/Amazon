@@ -1,5 +1,6 @@
 package pageobject;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
@@ -17,7 +18,7 @@ public class LoginPage {
     @Step("Enter user email")
     public PasswordPage clickContinueButton() {
         enterLogin();
-        continueButton.click();
+        continueButton.shouldBe(Condition.visible).click();
         return new PasswordPage();
     }
 }

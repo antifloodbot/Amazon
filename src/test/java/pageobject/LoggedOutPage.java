@@ -1,5 +1,6 @@
 package pageobject;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
@@ -10,6 +11,6 @@ public class LoggedOutPage {
 
     @Step("Getting text after log out")
     public String getTextAfterLogOut(){
-        return signInText.getText();
+        return signInText.shouldBe(Condition.visible).getText();
     }
 }

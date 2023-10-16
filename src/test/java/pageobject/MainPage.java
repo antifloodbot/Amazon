@@ -1,5 +1,6 @@
 package pageobject;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
@@ -11,7 +12,7 @@ public class MainPage {
 
     @Step("Open login form")
     public LoginPage clickLoginButton() {
-        loginButton.click();
+        loginButton.shouldBe(Condition.visible).click();
         return new LoginPage();
     }
 }
