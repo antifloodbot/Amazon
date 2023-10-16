@@ -14,7 +14,7 @@ public class PasswordPage {
         passwordField.setValue("+z9}m:^5V^j+XFh");
     }
 
-    @Step("Clicking on continue sign in button on the Password Page")
+    @Step("Enter user password")
     public LoggedInPage clickSignInButton() {
         enterPassword();
         signInButton.click();

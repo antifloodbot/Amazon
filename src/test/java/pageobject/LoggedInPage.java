@@ -18,7 +18,7 @@ public class LoggedInPage {
         return greetingText.getText();
     }
 
-    @Step("Clicking on logout button on the Main Page")
+    @Step("Logout")
     public LoggedOutPage clickLogoutButton() {
         Actions actions = new Actions(Selenide.webdriver().driver().getWebDriver());
         actions.moveToElement(accountArea).perform();

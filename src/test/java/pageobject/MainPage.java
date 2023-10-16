@@ -9,7 +9,7 @@ public class MainPage {
 
     SelenideElement loginButton = $x("//span[@id='nav-link-accountList-nav-line-1']");
 
-    @Step("Clicking on login button on the Main Page")
+    @Step("Open login form")
     public LoginPage clickLoginButton() {
         loginButton.click();
         return new LoginPage();

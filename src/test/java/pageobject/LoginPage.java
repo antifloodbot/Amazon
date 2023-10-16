@@ -14,7 +14,7 @@ public class LoginPage {
         loginField.setValue("kostia.talamaniuk@ukr.net");
     }
 
-    @Step("Clicking on continue button on the Login Page")
+    @Step("Enter user email")
     public PasswordPage clickContinueButton() {
         enterLogin();
         continueButton.click();
