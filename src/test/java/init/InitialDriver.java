@@ -16,7 +16,7 @@ public class InitialDriver {
     @BeforeTest
     public void setupWebDriver(){
         Configuration.browser = "chrome";
-        Configuration.timeout = 100000;
+        Configuration.timeout = 10000;
 
         ChromeOptions options = getChromeOptions();
         Configuration.browserCapabilities = options;
