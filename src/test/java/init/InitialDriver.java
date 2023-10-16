@@ -15,7 +15,6 @@ public class InitialDriver {
     @BeforeTest
     public void setupWebDriver(){
         Configuration.browser = "chrome";
-        Configuration.browserCapabilities.setCapability("chrome.switches", Arrays.asList("--user-agent=Chrome/118.0.5993.70"));
         Selenide.open(BASE_URL);
         WebDriverRunner.getWebDriver().manage().window().maximize();
     }
