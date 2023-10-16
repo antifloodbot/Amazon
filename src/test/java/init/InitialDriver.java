@@ -34,6 +34,7 @@ public class InitialDriver {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--no-sandbox");
         chromeOptions.addArguments("--disable-dev-shm-usage");
+        chromeOptions.addArguments("--headless");
         chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
         chromeOptions.addArguments("--disable-features=AutomationControlled");
         chromeOptions.addArguments("--user-agent='" + getRandomUserAgent().userAgentName + "'");
