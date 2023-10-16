@@ -14,7 +14,7 @@ public class InitialDriver {
     private final String BASE_URL = "https://amazon.com";
 
     @BeforeClass
-    public void setupWebDriver(){
+    public void openBrowser(){
         Configuration.browser = "chrome";
         Configuration.timeout = 10000;
 
@@ -26,7 +26,7 @@ public class InitialDriver {
     }
 
     @AfterClass
-    public void close() {
+    public void closeBrowser() {
         Selenide.closeWebDriver();
     }
 
