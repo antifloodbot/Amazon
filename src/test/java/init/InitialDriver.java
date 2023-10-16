@@ -3,6 +3,7 @@ package init;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
+import io.qameta.allure.Step;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -22,7 +23,6 @@ public class InitialDriver {
         Configuration.browserCapabilities = options;
 
         Selenide.open(BASE_URL);
-        WebDriverRunner.getWebDriver().manage().window().maximize();
     }
 
     @AfterClass
