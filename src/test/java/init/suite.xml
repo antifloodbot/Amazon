@@ -4,8 +4,8 @@
 
     <test name="negative">
         <classes>
-            <class name="testSuits.InvalidUser"/>
             <class name="testSuits.InvalidPassword"/>
+            <class name="testSuits.InvalidUser"/>
         </classes>
     </test>
 
