@@ -2,6 +2,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="suite" verbose="10" parallel="tests" thread-count="1">
 
+    <test name="negative">
+        <classes>
+            <class name="testSuits.InvalidUser"/>
+            <class name="testSuits.InvalidPassword"/>
+        </classes>
+    </test>
+
     <test name="positive">
         <classes>
             <class name="testSuits.SuccessLoginWithLogout"/>
@@ -9,11 +16,5 @@
         </classes>
     </test>
 
-    <test name="negative">
-        <classes>
-            <class name="testSuits.InvalidUser"/>
-            <class name="testSuits.InvalidPassword"/>
-        </classes>
-    </test>
 
 </suite>
