@@ -1,4 +1,4 @@
-package pageobject;
+package logic;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;

@@ -1,4 +1,4 @@
-package pageobject;
+package logic;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
@@ -8,8 +8,8 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class PasswordPage {
 
-    private String VALID_PASSWORD = "+z9}m:^5V^j+XFh";
-    private String INVALID_PASSWORD = "qwerty12345";
+    private final String VALID_PASSWORD = "+z9}m:^5V^j+XFh";
+    private final String INVALID_PASSWORD = "qwerty12345";
 
     private SelenideElement passwordField = $x("//input[@id='ap_password']");
     private SelenideElement signInButton = $x("//input[@id='signInSubmit']");

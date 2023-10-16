@@ -1,11 +1,11 @@
-package testSuits;
+package signIn.positive;
 
 import utils.InitialDriver;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pageobject.MainPage;
+import logic.MainPage;
 import utils.TestDataReader;
 
 public class SuccessLoginWithLogout extends InitialDriver {

@@ -1,4 +1,4 @@
-package pageobject;
+package logic;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
@@ -7,8 +7,8 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class LoginPage {
-    private String VALID_USER = "kostia.talamaniuk@ukr.net";
-    private String INVALID_USER = "kostia.talamaniuk@ukr.nett";
+    private final String VALID_USER = "kostia.talamaniuk@ukr.net";
+    private final String INVALID_USER = "kostia.talamaniuk@ukr.nett";
 
     private SelenideElement loginField = $x("//input[@id='ap_email']");
     private SelenideElement continueButton = $x("//input[@id='continue']");

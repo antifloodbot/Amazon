@@ -1,25 +1,24 @@
-package testSuits;
+package signIn.negative;
 
 import utils.InitialDriver;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pageobject.MainPage;
+import logic.MainPage;
 import utils.TestDataReader;
 
-public class InvalidPassword extends InitialDriver {
+public class InvalidUser extends InitialDriver {
 
     @Test
-    @Description("Test check validation for invalid password")
+    @Description("Test check validation for invalid user")
     @Owner("Kostia")
-    public void invalidPassword() {
+    public void invalidUser(){
         String actualErrorMessage = new MainPage()
                 .clickLoginButton()
-                .clickContinueButton()
-                .getErrorMessageAfterInvalidPassword();
+                .getErrorMessageForInvalidLogin();
 
-        String expectedErrorMessage = TestDataReader.get("INVALID_PASSWORD_MESSAGE");
+        String expectedErrorMessage = TestDataReader.get("INVALID_USER_MESSAGE");
         Assert.assertEquals(actualErrorMessage, expectedErrorMessage);
     }
 }
