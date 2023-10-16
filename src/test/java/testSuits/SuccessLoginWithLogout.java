@@ -1,11 +1,12 @@
 package testSuits;
 
-import init.InitialDriver;
+import utils.InitialDriver;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageobject.MainPage;
+import utils.TestDataReader;
 
 public class SuccessLoginWithLogout extends InitialDriver {
 
@@ -20,6 +21,7 @@ public class SuccessLoginWithLogout extends InitialDriver {
                 .clickLogoutButton()
                 .getTextAfterLogOut();
 
-        Assert.assertEquals(actualLoggedOutText, "Sign in");
+        String expectedErrorMessage = TestDataReader.get("SUCCESS_LOGOUT_MESSAGE");
+        Assert.assertEquals(actualLoggedOutText, expectedErrorMessage);
     }
 }

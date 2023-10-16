@@ -1,11 +1,12 @@
 package testSuits;
 
-import init.InitialDriver;
+import utils.InitialDriver;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageobject.MainPage;
+import utils.TestDataReader;
 
 public class InvalidUser extends InitialDriver {
 
@@ -17,6 +18,7 @@ public class InvalidUser extends InitialDriver {
                 .clickLoginButton()
                 .getErrorMessageForInvalidLogin();
 
-        Assert.assertEquals(actualErrorMessage, "We cannot find an account with that email address");
+        String expectedErrorMessage = TestDataReader.get("INVALID_USER_MESSAGE");
+        Assert.assertEquals(actualErrorMessage, expectedErrorMessage);
     }
 }

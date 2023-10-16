@@ -1,11 +1,12 @@
 package testSuits;
 
-import init.InitialDriver;
+import utils.InitialDriver;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageobject.MainPage;
+import utils.TestDataReader;
 
 public class InvalidPassword extends InitialDriver {
 
@@ -18,6 +19,7 @@ public class InvalidPassword extends InitialDriver {
                 .clickContinueButton()
                 .getErrorMessageAfterInvalidPassword();
 
-        Assert.assertEquals(actualErrorMessage, "Your password is incorrect");
+        String expectedErrorMessage = TestDataReader.get("INVALID_PASSWORD_MESSAGE");
+        Assert.assertEquals(actualErrorMessage, expectedErrorMessage);
     }
 }

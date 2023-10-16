@@ -38,7 +38,7 @@
                     </argLine>
                     <suiteXmlFiles>
                         <suiteXmlFile>${basedir}${TEST_SUITE}.xml</suiteXmlFile>
-                        <!--<suiteXmlFile>${basedir}src/test/java/init/suite.xml</suiteXmlFile>-->
+                        <!--<suiteXmlFile>${basedir}src/test/java/utils/suite.xml</suiteXmlFile>-->
                     </suiteXmlFiles>
                     <systemProperties>
                         <property>
@@ -65,6 +65,14 @@
                 <version>${allure-maven-version}</version>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/test/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
 
     <dependencies>
