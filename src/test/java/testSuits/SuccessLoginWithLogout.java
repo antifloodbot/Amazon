@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageobject.MainPage;
 
-public class SuccessLogout extends InitialDriver {
+public class SuccessLoginWithLogout extends InitialDriver {
 
     @Test
     @Description("Test check success logout")

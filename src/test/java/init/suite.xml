@@ -4,8 +4,8 @@
 
     <test name="positive">
         <classes>
+            <class name="testSuits.SuccessLoginWithLogout"/>
             <class name="testSuits.SuccessLogin"/>
-            <class name="testSuits.SuccessLogout"/>
         </classes>
     </test>
 
