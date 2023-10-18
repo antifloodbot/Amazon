@@ -8,7 +8,7 @@ public class TestDataReader {
     private static Properties properties = new Properties();
 
     static {
-        try (InputStream input = TestDataReader.class.getResourceAsStream("/testData.properties")) {
+        try (InputStream input = TestDataReader.class.getResourceAsStream("src/main/resources/testData.properties")) {
             if (input == null) {
                 throw new IOException("Unable to find testData.properties");
             }
