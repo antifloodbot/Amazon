@@ -79,7 +79,7 @@
        </plugins>
        <resources>
            <resource>
-               <directory>src/test/java</directory>
+               <directory>src/main/resources</directory>
                <includes>
                    <include>**/*.properties</include>
                </includes>
